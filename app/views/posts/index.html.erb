@@ -5,6 +5,9 @@
 
 <div id="posts">
   <h1>Posts</h1>
-  <%= render @posts %>
+  <% @posts.each do |p| %>
+    <%= render partial: 'post', locals: { post: p } %>
+  <% end %>
 </div>
-<%= will_paginate @posts %>
+
+<!-- <%= will_paginate @posts %> -->
